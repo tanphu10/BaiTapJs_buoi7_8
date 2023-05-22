@@ -30,7 +30,8 @@
                 </div>
                 <div class="col-6">
                     <button type="button" class="btn btn-outline-danger" onclick="addNumber()">Add number</button>
-                    <button type="button" class="btn btn-outline-warning" onclick="deleteNumber()">Delete number</button>
+                    <button type="button" class="btn btn-outline-warning" onclick="deleteNumber()">Delete
+                        number</button>
                 </div>
                 <div class=" alert alert-success m-3 me-5 py-3 text-start">
                     <!-- <div> <i class="fa-solid fa-hand-point-right"></i></div> -->
@@ -131,15 +132,25 @@
                 <h2 class="accordion-header" id="headingSix">
                     <button class="accordion-button" type="button" data-bs-toggle="collapse"
                         data-bs-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
-                        <label for="" class="form-label">Câu 6 Đổi chỗ 2 giá trị trong mảng theo vị trí ( cho nhập vào 2 số muốn đổi chổ giá trị) :</label>
+                        <label for="" class="form-label">Câu 6 Đổi chỗ 2 giá trị trong mảng theo vị trí ( cho nhập vào 2
+                            số muốn đổi chổ giá trị) :</label>
                     </button>
                 </h2>
                 <div id="collapseSix" class="accordion-collapse collapse show" aria-labelledby="headingSix"
                     data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-                        <button type="button" class="btn btn-outline-primary my-3" >Kết quả
+                        <button type="button" class="btn btn-outline-primary my-3" onclick="changeLocal()">Đổi chổ
                         </button>
-                        <div class="alert alert-danger" ></div>
+                        <div class="row my-3">
+                            <div class="col-6">
+                                <input type="" class="w-75" value="" id="valueIndexOne" placeholder="Nhập giá trị index 1">
+                            </div>
+                            <div class="col-6">
+                                <input type="" class="w-75" value=""id="valueIndexTwo" placeholder="Nhập giá trị index 2" >
+                            </div>
+                        </div>
+                        <div class="alert alert-danger" id="arrayAfterChange" aria-placeholder="mảng sau khi đổi"></div>
+
                     </div>
                 </div>
             </div>
@@ -184,20 +195,20 @@
                 </div>
             </div>
 
-            <!-- câu 9 tìm số nguyên tố đầu tiên trong mảng  -->
+            <!-- câu 9 tìm có bn số nguyên -->
             <div class="accordion-item">
-                <h2 class="accordion-header" id="headingEight">
+                <h2 class="accordion-header" id="headingNight">
                     <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseEight" aria-expanded="true" aria-controls="collapseEight">
+                        data-bs-target="#collapseNight" aria-expanded="true" aria-controls="collapseNight">
                         <label for="" class="form-label">Câu 9 Nhập mảng số thực, tìm trong mảng có bao nhiêu số nguyên
                             :</label>
                     </button>
                 </h2>
-                <div id="collapseEight" class="accordion-collapse collapse show" aria-labelledby="headingEight"
+                <div id="collapseNight" class="accordion-collapse collapse show" aria-labelledby="headingNight"
                     data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-                        <button type="button" class="btn btn-outline-primary my-3">Kết quả </button>
-                        <div class="alert alert-danger" id="soThuc"></div>
+                        <button type="button" class="btn btn-outline-primary my-3" onclick="soNguyen()">Kết quả </button>
+                        <div class="alert alert-danger" id="soNguyen"></div>
                     </div>
                 </div>
             </div>

@@ -5,7 +5,7 @@ function addNumber() {
   arr.push(nhapSoN);
   //  console.log(nhapSoN);
   document.getElementById("hienThiArray").innerHTML =
-    "positive numbers are: " + arr;
+    "numbers are: " + arr;
 }
 
 // xóa khỏi mảng
@@ -128,13 +128,54 @@ document.getElementById("resultNumberEvenFinal").onclick = function () {
     "Even number final :" + bienA;
 };
 
+
+// câu 6 đổi 2 chổ giá trị trong mảng 
+/*
+input: là mảng
+
+các bước xử lí :
+tạo 1 biến trung gian = var index1
+chạy vòng lặp 
+
+
+output: xuất ra mảng đã đổi 2 vị trí index
+
+*/
+
+// function changeLocal(){
+//   var giaTriMot=arr[index];
+//   var giaTriHai=arr[index];
+//   var bienTam=giaTriMot;
+//   for(i=0;i<arr.length;i++){
+
+//   }
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // câu 7  sort number Array.
 
 function sortArray() {
   // var sortNumber=arr[];
-  arr.sort();
-  console.log(arr);
-  document.getElementById("sortNumberAB").innerHTML = "Sort : " + arr;
+  var arrTangDan= arr.sort(function(a,b){return a-b;});
+  // console.log(arr);
+  document.getElementById("sortNumberAB").innerHTML = "Sort : " +  arrTangDan;
 }
 
 // câu 8 tìm số nguyên tố đầu tiên trong mảng
@@ -150,18 +191,18 @@ output: export the firt prime number of array.
 
 */
 // kiểm tra số nguyên tố
-function checkSNT(arr) {
-  var check = false;
+function checkSNT(number) {
+  var check = true;
   for (z = 2; z < arr.length; z++) {
     if (arr[z] % z == 0) {
-      check = true;
+      check = false;
     }
   }
   return check;
 }
 
 function primeNumber() {
-  var soNguyenTo = 0;
+  var soNguyenTo = " ";
   for (i = 0; i < arr.length; i++) {
     if (checkSNT(i) == true) {
       soNguyenTo = checkSNT(i);
@@ -174,6 +215,22 @@ function primeNumber() {
   document.getElementById("soNguyenTo").innerHTML =
     "số Nguyên tố đầu tiên trong mảng là :" + soNguyenTo;
 }
+
+// câu 9 đếm số nguyên
+
+function soNguyen(){
+    var tongSoNguyen=0;
+  for(i=0;i<arr.length;i++){
+    var bienTamA=Number.isInteger(arr[i]);
+    if(bienTamA==true){
+    tongSoNguyen++;
+    }
+  }
+  // console.log(tongSoNguyen);
+  document.getElementById("soNguyen").innerHTML=tongSoNguyen;
+  
+}
+
 
 /*
 // câu 10 so sánh số chẵn lẻ xem số nào nhiều hơn.
