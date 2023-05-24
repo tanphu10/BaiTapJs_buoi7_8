@@ -142,31 +142,17 @@ output: xuất ra mảng đã đổi 2 vị trí index
 
 */
 
-// function changeLocal(){
-//   var giaTriMot=arr[index];
-//   var giaTriHai=arr[index];
-//   var bienTam=giaTriMot;
-//   for(i=0;i<arr.length;i++){
-
-//   }
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+function changeLocal(){
+  var giaTriMot=Number(document.getElementById("valueIndexOne").value);
+  var giaTriHai=Number(document.getElementById("valueIndexTwo").value);
+  var bienTam=arr[giaTriMot];
+  
+  arr[giaTriMot]=arr[giaTriHai];
+  arr[giaTriHai]=bienTam;
+document.getElementById("arrayAfterChange").innerHTML="After exchange array : "+arr;
+  // console.log(arr);
+  // console.log(giaTriMot);
+}
 
 
 // câu 7  sort number Array.
@@ -191,30 +177,66 @@ output: export the firt prime number of array.
 
 */
 // kiểm tra số nguyên tố
-function checkSNT(number) {
-  var check = true;
-  for (z = 2; z < arr.length; z++) {
-    if (arr[z] % z == 0) {
-      check = false;
+
+function ktrSoNguyenTo(item) {
+  var soNguyenTo = true;
+  if (item < 2) {
+    soNguyenTo = false;
+    return soNguyenTo;
+  } else {
+    for (var i = 2; i <= Math.sqrt(item); i++) {
+      if (item % 2 == 0) {
+        soNguyenTo = false;
+        break;
+      }
     }
   }
-  return check;
+  return soNguyenTo;
 }
 
 function primeNumber() {
-  var soNguyenTo = " ";
-  for (i = 0; i < arr.length; i++) {
-    if (checkSNT(i) == true) {
-      soNguyenTo = checkSNT(i);
+  var soNguyenToDauTien;
+  for (var i = 0; i < arr.length; i++) {
+    if (ktrSoNguyenTo(arr[i]) == true) {
+      soNguyenToDauTien = arr[i];
+      console.log(soNguyenToDauTien);
       break;
     } else {
-      soNguyenTo = -1;
+      soNguyenToDauTien = -1;
+      console.log(soNguyenToDauTien);
     }
   }
-  console.log(soNguyenTo);
+
   document.getElementById("soNguyenTo").innerHTML =
-    "số Nguyên tố đầu tiên trong mảng là :" + soNguyenTo;
+  "số Nguyên tố đầu tiên trong mảng là :" + soNguyenToDauTien;
 }
+
+
+
+
+// function checkSNT(number) {
+//   var check = true;
+//   for (z = 2; z < arr.length; z++) {
+//     if (arr[z] % z == 0) {
+//       check = false;
+//     }
+//   }
+//   return check;
+// }
+
+// function primeNumber() {
+//   var soNguyenTo = " ";
+//   for (i = 0; i < arr.length; i++) {
+//     if (checkSNT(i) == true) {
+//       soNguyenTo = checkSNT(i);
+//       break;
+//     } else {
+//       soNguyenTo = -1;
+//     }
+//   }
+//   console.log(soNguyenTo);
+  
+// }
 
 // câu 9 đếm số nguyên
 
