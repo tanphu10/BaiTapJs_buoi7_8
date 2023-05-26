@@ -10,10 +10,13 @@ function addNumber() {
 
 // xóa khỏi mảng
 
-// function deleteNumber(){
-// // var xoaSoN=addNumber();
-// arr.splice(0;arr.length-1);
-// }
+function deleteNumber(){
+var xoaSoN=addNumber();
+arr.splice(0,arr.length);
+console.log(arr);
+document.getElementById("hienThiArray").innerHTML =
+"numbers are: " + arr;
+}
 // bài tập 1
 /*
 // tổng các số dương trong mảng
@@ -178,65 +181,79 @@ output: export the firt prime number of array.
 */
 // kiểm tra số nguyên tố
 
-function ktrSoNguyenTo(item) {
-  var soNguyenTo = true;
-  if (item < 2) {
-    soNguyenTo = false;
-    return soNguyenTo;
-  } else {
-    for (var i = 2; i <= Math.sqrt(item); i++) {
-      if (item % 2 == 0) {
-        soNguyenTo = false;
-        break;
-      }
-    }
-  }
-  return soNguyenTo;
-}
-
-function primeNumber() {
-  var soNguyenToDauTien;
-  for (var i = 0; i < arr.length; i++) {
-    if (ktrSoNguyenTo(arr[i]) == true) {
-      soNguyenToDauTien = arr[i];
-      console.log(soNguyenToDauTien);
-      break;
-    } else {
-      soNguyenToDauTien = -1;
-      console.log(soNguyenToDauTien);
-    }
-  }
-
-  document.getElementById("soNguyenTo").innerHTML =
-  "số Nguyên tố đầu tiên trong mảng là :" + soNguyenToDauTien;
-}
-
-
-
-
-// function checkSNT(number) {
-//   var check = true;
-//   for (z = 2; z < arr.length; z++) {
-//     if (arr[z] % z == 0) {
-//       check = false;
+// function ktrSoNguyenTo(item) {
+//   var soNguyenTo = true;
+//   if (item < 2) {
+//     soNguyenTo = false;
+//     return soNguyenTo;
+//   } else {
+//     for (var i = 2; i <= Math.sqrt(item); i++) {
+//       if (item % 2 == 0) {
+//         soNguyenTo = false;
+//         break;
+//       }
 //     }
 //   }
-//   return check;
+//   return soNguyenTo;
 // }
 
 // function primeNumber() {
-//   var soNguyenTo = " ";
-//   for (i = 0; i < arr.length; i++) {
-//     if (checkSNT(i) == true) {
-//       soNguyenTo = checkSNT(i);
+//   var soNguyenToDauTien;
+//   for (var i = 0; i < arr.length; i++) {
+//     if (ktrSoNguyenTo(arr[i]) == true) {
+//       soNguyenToDauTien = arr[i];
+//       console.log(soNguyenToDauTien);
 //       break;
 //     } else {
-//       soNguyenTo = -1;
+//       soNguyenToDauTien = -1;
+//       console.log(soNguyenToDauTien);
 //     }
 //   }
-//   console.log(soNguyenTo);
-  
+
+//   document.getElementById("soNguyenTo").innerHTML =
+//   "số Nguyên tố đầu tiên trong mảng là :" + soNguyenToDauTien;
 // }
+
+
+// [4,6,8,10,11] 
+/**
+ * 11/2
+ * 12/3
+ * /4
+ * /5
+ * /6
+ * /7
+ * ...
+ */
+
+function checkSNT(number) {
+  var check = true;
+
+  if(number<=1){
+    return false
+  }
+  for (z = 2; z < number; z++) {
+    if (number % z == 0 ) {
+      check = false;
+    }
+  }
+  return check;
+}
+// arr [6,2,3,4,6]
+function primeNumber() {
+  var soNguyenTo = " ";
+  for (i = 0; i < arr.length; i++) {
+    if (checkSNT(arr[i]) == true) {
+      soNguyenTo = arr[i];
+      break;
+    } else {
+      soNguyenTo = -1;
+    }
+  }
+  console.log(soNguyenTo);
+  document.getElementById("soNguyenTo").innerHTML =
+    "số Nguyên tố đầu tiên trong mảng là :" + soNguyenTo;
+}
 
 // câu 9 đếm số nguyên
 
